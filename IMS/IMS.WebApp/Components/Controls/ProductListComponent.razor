@@ -14,7 +14,7 @@
         {
             foreach (var prod in products)
             {
-                <ProductListItemComponent product="prod">
+                <ProductListItemComponent @rendermode="InteractiveServer" Product="prod">
                 </ProductListItemComponent>
             }
         }
@@ -25,10 +25,10 @@
     private List<Product>? products;
 
     [Parameter]
-    public string? SearchproductFilter { get; set; }
+    public string? SearchProductFilter { get; set; }
 
     protected override async Task OnParametersSetAsync()
     {
-        products = (await ViewProductsByNameUseCase.ExecuteAsync(SearchproductFilter ?? "")).ToList();
+        products = (await ViewProductsByNameUseCase.ExecuteAsync(SearchProductFilter ?? "")).ToList();
     }
 }
