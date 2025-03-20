@@ -11,9 +11,6 @@ namespace IMS.CoreBusiness
     {
         public int ProductTransactionId { get; set; }
 
-        /// <summary>
-        /// Sales order number
-        /// </summary>
         public string SONumber { get; set; } = string.Empty;
         
         public string ProductionNumber { get; set; } = string.Empty;
