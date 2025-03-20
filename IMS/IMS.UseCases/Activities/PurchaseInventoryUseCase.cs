@@ -25,7 +25,7 @@ namespace IMS.UseCases.Activities
 
         public async Task ExecuteAsync(string poNumber, Inventory inventory, int quantity, string doneBy)
         {
-            inventoryTransactionRepository.PurchaseAsync(poNumber, inventory, quantity, doneBy, inventory.Price);
+            await inventoryTransactionRepository.PurchaseAsync(poNumber, inventory, quantity, doneBy, inventory.Price);
 
             inventory.Quantity += quantity;
             await this.inventoryRepository.UpdateInventoryAsync(inventory);

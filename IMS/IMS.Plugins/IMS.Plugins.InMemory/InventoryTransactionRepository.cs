@@ -12,7 +12,7 @@ namespace IMS.Plugins.InMemory
     {
         public List<InventoryTransaction> _inventoryTransactions = new List<InventoryTransaction>();
 
-        public void PurchaseAsync(string poNumber, Inventory inventory, int quantity, string doneBy, double price)
+        public Task PurchaseAsync(string poNumber, Inventory inventory, int quantity, string doneBy, double price)
         {
             this._inventoryTransactions.Add(new InventoryTransaction
             {
@@ -25,6 +25,8 @@ namespace IMS.Plugins.InMemory
                 DoneBy = doneBy,
                 UnitPrice = price
             });
+
+            return Task.CompletedTask;
         }
     }
 }
