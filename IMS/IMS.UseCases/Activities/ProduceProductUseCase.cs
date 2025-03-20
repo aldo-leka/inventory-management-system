@@ -28,7 +28,6 @@ namespace IMS.UseCases.Activities
             // Add transaction record
             await this.productTransactionRepository.ProduceAsync(productionNumber, product, quantity, doneBy);
 
-
             // Update the quantity of product
             product.Quantity += quantity;
             await this.productRepository.UpdateProductAsync(product);

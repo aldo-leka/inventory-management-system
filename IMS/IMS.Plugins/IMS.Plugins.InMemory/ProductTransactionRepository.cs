@@ -62,8 +62,6 @@ namespace IMS.Plugins.InMemory
                 TransactionDate = DateTime.Now,
                 DoneBy = doneBy
             });
-
-            // Add product transaction
         }
     }
 }
